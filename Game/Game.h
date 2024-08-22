@@ -44,6 +44,7 @@ void InitBag(vector<vector<Pixel>>&BlockImage,uint rowCnt,uint colCnt);
 void InitItemBoard();
 void InitMyBag();
 void WorkSpaceBoardInit();
+void UpdateWorldChunksForce();
 tuple<Texture2D*,unordered_map<string,vec2>,uint,uint,vector<vector<Pixel>>>LoadAllImagesToOneTexture(const char*path);
 //////////////////////////////////
 #endif

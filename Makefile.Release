@@ -11,7 +11,7 @@ MAKEFILE      = Makefile.Release
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -D_UNICODE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wextra -Wall -W $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wextra -Wall -W -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I. -IPackaged -IPackaged\tinyObj -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\include -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\include\QtWidgets -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\include\QtGui -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\include\QtANGLE -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\include\QtCore -Irelease -I. -I..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\win32-g++ 
@@ -313,12 +313,12 @@ $(DESTDIR_TARGET): ui_mainwindow.h ui_itemboard.h ui_workspaceboard.h ui_bag.h $
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) object_script.XYLWorld.Release  $(LIBS)
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Release XYLWorld.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	@$(QMAKE) -o Makefile.Release XYLWorld.pro -spec win32-g++
 
 qmake_all: FORCE
 
 dist:
-	$(ZIP) XYLWorld.zip $(SOURCES) $(DIST) XYLWorld.pro ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\spec_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\qdevice.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\device_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\g++-base.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\angle.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\sanitize.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\gcc-base.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\qconfig.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt_functions.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\toolchain.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\default_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\resolve_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\default_post.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\build_pass.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qml_debug.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\precompile_header.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\warn_on.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\resources.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\moc.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\uic.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qmake_use.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\file_copies.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\windows.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exceptions.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\yacc.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\lex.prf XYLWorld.pro ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\qtmain.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Widgets.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Gui.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Core.prl    ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\data\dummy.cpp mainwindow.h palette.h header.h Game\Game.h Game\globalsource.h Dependency\include.h Dependency\timer.h Dependency\random.h Dependency\bufferbase.hpp Dependency\vao.h Dependency\vbo.h Dependency\ebo.h Dependency\program.h Dependency\perlinnoise.h Dependency\ubo.h Dependency\ssbo.h Dependency\threadpool.h Dependency\texture2d.h Dependency\camera.h Game\controller.h Game\role.h Dependency\model.h Game\chunk.h Game\other.h Game\section.h Game\face.h Game\block.h Game\generateterrain.h Game\generateblock.h Game\generatebiomemap.h Game\generateface.h Game\generatedecoration.h Dependency\aabb.h Game\frustumcull.h Dependency\texture2dgeneral.h Game\biomebase.h Game\desert.h Game\forest.h Game\grassland.h Game\ocean.h Game\plainland.h Game\rainforest.h Game\snowfield.h Dependency\FSM.hpp Game\rolecontroller.h Game\rolecontrollerglobalsource.h Game\roledestroyblock.h Game\roledrop.h Game\rolefunctionblock.h Game\rolejump.h Game\rolemove.h Game\rolestop.h Game\bagglobalsource.h Dependency\textur1d.h Dependency\particlesystem.h Dependency\fbo.h Dependency\rbo.h Dependency\deferredrendering.h Game\bagbutton.h itemboard.h workspaceboard.h bag.h bagbutton.h main.cpp mainwindow.cpp palette.cpp header.cpp Game\Game.cpp Game\globalsource.cpp Dependency\include.cpp Dependency\timer.cpp Dependency\random.cpp Dependency\vao.cpp Dependency\vbo.cpp Dependency\ebo.cpp Dependency\program.cpp Dependency\perlinnoise.cpp Dependency\ubo.cpp Dependency\ssbo.cpp Dependency\threadpool.cpp Dependency\texture2d.cpp Dependency\camera.cpp Game\controller.cpp Game\role.cpp Dependency\model.cpp Game\chunk.cpp Game\other.cpp Game\section.cpp Game\face.cpp Game\block.cpp Game\generateterrain.cpp Game\generateblock.cpp Game\generatebiomemap.cpp Game\generateface.cpp Game\generatedecoration.cpp Dependency\aabb.cpp Game\frustumcull.cpp Dependency\texture2dgeneral.cpp Game\biomebase.cpp Game\desert.cpp Game\forest.cpp Game\grassland.cpp Game\ocean.cpp Game\plainland.cpp Game\rainforest.cpp Game\snowfield.cpp Game\rolecontroller.cpp Game\rolecontrollerglobalsource.cpp Game\roledestroyblock.cpp Game\roledrop.cpp Game\rolefunctionblock.cpp Game\rolejump.cpp Game\rolemove.cpp Game\rolestop.cpp Dependency\textur1d.cpp Dependency\particlesystem.cpp Dependency\fbo.cpp Dependency\rbo.cpp Dependency\deferredrendering.cpp itemboard.cpp workspaceboard.cpp bag.cpp bagbutton.cpp mainwindow.ui itemboard.ui workspaceboard.ui bag.ui    
+	$(ZIP) XYLWorld.zip $(SOURCES) $(DIST) XYLWorld.pro ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\spec_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\qdevice.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\device_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\g++-base.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\angle.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\sanitize.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\common\gcc-base.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\qconfig.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt_functions.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\toolchain.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\default_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\resolve_config.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\default_post.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\build_pass.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\precompile_header.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\warn_on.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qt.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\resources.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\moc.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\uic.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\qmake_use.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\file_copies.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\win32\windows.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\exceptions.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\yacc.prf ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\lex.prf XYLWorld.pro ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\qtmain.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Widgets.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Gui.prl ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\Qt5Core.prl    ..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\mkspecs\features\data\dummy.cpp mainwindow.h palette.h header.h Game\Game.h Game\globalsource.h Dependency\include.h Dependency\timer.h Dependency\random.h Dependency\bufferbase.hpp Dependency\vao.h Dependency\vbo.h Dependency\ebo.h Dependency\program.h Dependency\perlinnoise.h Dependency\ubo.h Dependency\ssbo.h Dependency\threadpool.h Dependency\texture2d.h Dependency\camera.h Game\controller.h Game\role.h Dependency\model.h Game\chunk.h Game\other.h Game\section.h Game\face.h Game\block.h Game\generateterrain.h Game\generateblock.h Game\generatebiomemap.h Game\generateface.h Game\generatedecoration.h Dependency\aabb.h Game\frustumcull.h Dependency\texture2dgeneral.h Game\biomebase.h Game\desert.h Game\forest.h Game\grassland.h Game\ocean.h Game\plainland.h Game\rainforest.h Game\snowfield.h Dependency\FSM.hpp Game\rolecontroller.h Game\rolecontrollerglobalsource.h Game\roledestroyblock.h Game\roledrop.h Game\rolefunctionblock.h Game\rolejump.h Game\rolemove.h Game\rolestop.h Game\bagglobalsource.h Dependency\textur1d.h Dependency\particlesystem.h Dependency\fbo.h Dependency\rbo.h Dependency\deferredrendering.h Game\bagbutton.h itemboard.h workspaceboard.h bag.h bagbutton.h main.cpp mainwindow.cpp palette.cpp header.cpp Game\Game.cpp Game\globalsource.cpp Dependency\include.cpp Dependency\timer.cpp Dependency\random.cpp Dependency\vao.cpp Dependency\vbo.cpp Dependency\ebo.cpp Dependency\program.cpp Dependency\perlinnoise.cpp Dependency\ubo.cpp Dependency\ssbo.cpp Dependency\threadpool.cpp Dependency\texture2d.cpp Dependency\camera.cpp Game\controller.cpp Game\role.cpp Dependency\model.cpp Game\chunk.cpp Game\other.cpp Game\section.cpp Game\face.cpp Game\block.cpp Game\generateterrain.cpp Game\generateblock.cpp Game\generatebiomemap.cpp Game\generateface.cpp Game\generatedecoration.cpp Dependency\aabb.cpp Game\frustumcull.cpp Dependency\texture2dgeneral.cpp Game\biomebase.cpp Game\desert.cpp Game\forest.cpp Game\grassland.cpp Game\ocean.cpp Game\plainland.cpp Game\rainforest.cpp Game\snowfield.cpp Game\rolecontroller.cpp Game\rolecontrollerglobalsource.cpp Game\roledestroyblock.cpp Game\roledrop.cpp Game\rolefunctionblock.cpp Game\rolejump.cpp Game\rolemove.cpp Game\rolestop.cpp Dependency\textur1d.cpp Dependency\particlesystem.cpp Dependency\fbo.cpp Dependency\rbo.cpp Dependency\deferredrendering.cpp itemboard.cpp workspaceboard.cpp bag.cpp bagbutton.cpp mainwindow.ui itemboard.ui workspaceboard.ui bag.ui    
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.o release\mainwindow.o release\palette.o release\header.o release\Game.o release\globalsource.o release\include.o release\timer.o release\random.o release\vao.o release\vbo.o release\ebo.o release\program.o release\perlinnoise.o release\ubo.o release\ssbo.o release\threadpool.o release\texture2d.o release\camera.o release\controller.o release\role.o release\model.o release\chunk.o release\other.o release\section.o release\face.o release\block.o release\generateterrain.o release\generateblock.o release\generatebiomemap.o release\generateface.o release\generatedecoration.o release\aabb.o release\frustumcull.o release\texture2dgeneral.o release\biomebase.o release\desert.o release\forest.o release\grassland.o release\ocean.o release\plainland.o release\rainforest.o release\snowfield.o release\rolecontroller.o release\rolecontrollerglobalsource.o release\roledestroyblock.o release\roledrop.o release\rolefunctionblock.o release\rolejump.o release\rolemove.o release\rolestop.o release\textur1d.o release\particlesystem.o release\fbo.o release\rbo.o release\deferredrendering.o release\itemboard.o release\workspaceboard.o release\bag.o release\bagbutton.o release\moc_mainwindow.o release\moc_palette.o release\moc_itemboard.o release\moc_workspaceboard.o release\moc_bag.o
@@ -831,7 +831,7 @@ release/moc_palette.cpp: ../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -839,57 +839,25 @@ release/moc_palette.cpp: ../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/controller.h \
 		Game/role.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qinputdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -1027,32 +995,6 @@ release/moc_itemboard.cpp: ../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidget
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtouchdevice.h \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
 		itemboard.h \
 		release/moc_predefs.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/bin/moc.exe
@@ -1266,40 +1208,6 @@ release/moc_bag.cpp: ../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFra
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtouchdevice.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyleoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvalidator.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qregularexpression.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyle.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabbar.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
 		bag.h \
 		release/moc_predefs.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/bin/moc.exe
@@ -1686,7 +1594,7 @@ ui_mainwindow.h: mainwindow.ui \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -1694,57 +1602,25 @@ ui_mainwindow.h: mainwindow.ui \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/controller.h \
 		Game/role.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qinputdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -2252,371 +2128,7 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QResizeEvent \
-		ui_mainwindow.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qframe.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyleoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvalidator.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qregularexpression.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyle.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabbar.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QListView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlistview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSlider \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QWidget \
-		palette.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopengl.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qt_windows.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE/GLES3/gl3.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE/GLES2/gl2.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopengles2ext.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopenglext.h \
-		Game/Game.h \
-		Game/globalsource.h \
-		header.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qopenglwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QSurfaceFormat \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qsurfaceformat.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopenglfunctions_4_5_core.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QOpenGLVersionFunctions \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopenglversionfunctions.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qopenglcontext.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QObject \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QScopedPointer \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QDateTime \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qdatetime.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QDebug \
-		Packaged/glm/glm.hpp \
-		Packaged/glm/detail/_fixes.hpp \
-		Packaged/glm/detail/setup.hpp \
-		Packaged/glm/simd/platform.h \
-		Packaged/glm/simd/neon.h \
-		Packaged/glm/fwd.hpp \
-		Packaged/glm/detail/qualifier.hpp \
-		Packaged/glm/vec2.hpp \
-		Packaged/glm/ext/vector_bool2.hpp \
-		Packaged/glm/detail/type_vec2.hpp \
-		Packaged/glm/detail/_swizzle.hpp \
-		Packaged/glm/detail/_swizzle_func.hpp \
-		Packaged/glm/detail/type_vec2.inl \
-		Packaged/glm/detail/compute_vector_relational.hpp \
-		Packaged/glm/ext/vector_bool2_precision.hpp \
-		Packaged/glm/ext/vector_float2.hpp \
-		Packaged/glm/ext/vector_float2_precision.hpp \
-		Packaged/glm/ext/vector_double2.hpp \
-		Packaged/glm/ext/vector_double2_precision.hpp \
-		Packaged/glm/ext/vector_int2.hpp \
-		Packaged/glm/ext/vector_int2_sized.hpp \
-		Packaged/glm/ext/scalar_int_sized.hpp \
-		Packaged/glm/ext/vector_uint2.hpp \
-		Packaged/glm/ext/vector_uint2_sized.hpp \
-		Packaged/glm/ext/scalar_uint_sized.hpp \
-		Packaged/glm/vec3.hpp \
-		Packaged/glm/ext/vector_bool3.hpp \
-		Packaged/glm/detail/type_vec3.hpp \
-		Packaged/glm/detail/type_vec3.inl \
-		Packaged/glm/ext/vector_bool3_precision.hpp \
-		Packaged/glm/ext/vector_float3.hpp \
-		Packaged/glm/ext/vector_float3_precision.hpp \
-		Packaged/glm/ext/vector_double3.hpp \
-		Packaged/glm/ext/vector_double3_precision.hpp \
-		Packaged/glm/ext/vector_int3.hpp \
-		Packaged/glm/ext/vector_int3_sized.hpp \
-		Packaged/glm/ext/vector_uint3.hpp \
-		Packaged/glm/ext/vector_uint3_sized.hpp \
-		Packaged/glm/vec4.hpp \
-		Packaged/glm/ext/vector_bool4.hpp \
-		Packaged/glm/detail/type_vec4.hpp \
-		Packaged/glm/detail/type_vec4.inl \
-		Packaged/glm/detail/type_vec4_simd.inl \
-		Packaged/glm/ext/vector_bool4_precision.hpp \
-		Packaged/glm/ext/vector_float4.hpp \
-		Packaged/glm/ext/vector_float4_precision.hpp \
-		Packaged/glm/ext/vector_double4.hpp \
-		Packaged/glm/ext/vector_double4_precision.hpp \
-		Packaged/glm/ext/vector_int4.hpp \
-		Packaged/glm/ext/vector_int4_sized.hpp \
-		Packaged/glm/ext/vector_uint4.hpp \
-		Packaged/glm/ext/vector_uint4_sized.hpp \
-		Packaged/glm/mat2x2.hpp \
-		Packaged/glm/ext/matrix_double2x2.hpp \
-		Packaged/glm/detail/type_mat2x2.hpp \
-		Packaged/glm/detail/type_mat2x2.inl \
-		Packaged/glm/matrix.hpp \
-		Packaged/glm/mat2x3.hpp \
-		Packaged/glm/ext/matrix_double2x3.hpp \
-		Packaged/glm/detail/type_mat2x3.hpp \
-		Packaged/glm/detail/type_mat2x3.inl \
-		Packaged/glm/ext/matrix_double2x3_precision.hpp \
-		Packaged/glm/ext/matrix_float2x3.hpp \
-		Packaged/glm/ext/matrix_float2x3_precision.hpp \
-		Packaged/glm/mat2x4.hpp \
-		Packaged/glm/ext/matrix_double2x4.hpp \
-		Packaged/glm/detail/type_mat2x4.hpp \
-		Packaged/glm/detail/type_mat2x4.inl \
-		Packaged/glm/ext/matrix_double2x4_precision.hpp \
-		Packaged/glm/ext/matrix_float2x4.hpp \
-		Packaged/glm/ext/matrix_float2x4_precision.hpp \
-		Packaged/glm/mat3x2.hpp \
-		Packaged/glm/ext/matrix_double3x2.hpp \
-		Packaged/glm/detail/type_mat3x2.hpp \
-		Packaged/glm/detail/type_mat3x2.inl \
-		Packaged/glm/ext/matrix_double3x2_precision.hpp \
-		Packaged/glm/ext/matrix_float3x2.hpp \
-		Packaged/glm/ext/matrix_float3x2_precision.hpp \
-		Packaged/glm/mat3x3.hpp \
-		Packaged/glm/ext/matrix_double3x3.hpp \
-		Packaged/glm/detail/type_mat3x3.hpp \
-		Packaged/glm/detail/type_mat3x3.inl \
-		Packaged/glm/ext/matrix_double3x3_precision.hpp \
-		Packaged/glm/ext/matrix_float3x3.hpp \
-		Packaged/glm/ext/matrix_float3x3_precision.hpp \
-		Packaged/glm/mat3x4.hpp \
-		Packaged/glm/ext/matrix_double3x4.hpp \
-		Packaged/glm/detail/type_mat3x4.hpp \
-		Packaged/glm/detail/type_mat3x4.inl \
-		Packaged/glm/ext/matrix_double3x4_precision.hpp \
-		Packaged/glm/ext/matrix_float3x4.hpp \
-		Packaged/glm/ext/matrix_float3x4_precision.hpp \
-		Packaged/glm/mat4x2.hpp \
-		Packaged/glm/ext/matrix_double4x2.hpp \
-		Packaged/glm/detail/type_mat4x2.hpp \
-		Packaged/glm/detail/type_mat4x2.inl \
-		Packaged/glm/ext/matrix_double4x2_precision.hpp \
-		Packaged/glm/ext/matrix_float4x2.hpp \
-		Packaged/glm/ext/matrix_float4x2_precision.hpp \
-		Packaged/glm/mat4x3.hpp \
-		Packaged/glm/ext/matrix_double4x3.hpp \
-		Packaged/glm/detail/type_mat4x3.hpp \
-		Packaged/glm/detail/type_mat4x3.inl \
-		Packaged/glm/ext/matrix_double4x3_precision.hpp \
-		Packaged/glm/ext/matrix_float4x3.hpp \
-		Packaged/glm/ext/matrix_float4x3_precision.hpp \
-		Packaged/glm/mat4x4.hpp \
-		Packaged/glm/ext/matrix_double4x4.hpp \
-		Packaged/glm/detail/type_mat4x4.hpp \
-		Packaged/glm/detail/type_mat4x4.inl \
-		Packaged/glm/detail/type_mat4x4_simd.inl \
-		Packaged/glm/ext/matrix_double4x4_precision.hpp \
-		Packaged/glm/ext/matrix_float4x4.hpp \
-		Packaged/glm/ext/matrix_float4x4_precision.hpp \
-		Packaged/glm/detail/func_matrix.inl \
-		Packaged/glm/geometric.hpp \
-		Packaged/glm/detail/func_geometric.inl \
-		Packaged/glm/exponential.hpp \
-		Packaged/glm/detail/type_vec1.hpp \
-		Packaged/glm/detail/type_vec1.inl \
-		Packaged/glm/detail/func_exponential.inl \
-		Packaged/glm/vector_relational.hpp \
-		Packaged/glm/detail/func_vector_relational.inl \
-		Packaged/glm/detail/func_vector_relational_simd.inl \
-		Packaged/glm/detail/_vectorize.hpp \
-		Packaged/glm/detail/func_exponential_simd.inl \
-		Packaged/glm/simd/exponential.h \
-		Packaged/glm/common.hpp \
-		Packaged/glm/detail/func_common.inl \
-		Packaged/glm/detail/compute_common.hpp \
-		Packaged/glm/detail/func_common_simd.inl \
-		Packaged/glm/simd/common.h \
-		Packaged/glm/detail/func_geometric_simd.inl \
-		Packaged/glm/simd/geometric.h \
-		Packaged/glm/detail/func_matrix_simd.inl \
-		Packaged/glm/simd/matrix.h \
-		Packaged/glm/ext/matrix_double2x2_precision.hpp \
-		Packaged/glm/ext/matrix_float2x2.hpp \
-		Packaged/glm/ext/matrix_float2x2_precision.hpp \
-		Packaged/glm/trigonometric.hpp \
-		Packaged/glm/detail/func_trigonometric.inl \
-		Packaged/glm/detail/func_trigonometric_simd.inl \
-		Packaged/glm/packing.hpp \
-		Packaged/glm/detail/func_packing.inl \
-		Packaged/glm/detail/type_half.hpp \
-		Packaged/glm/detail/type_half.inl \
-		Packaged/glm/detail/func_packing_simd.inl \
-		Packaged/glm/integer.hpp \
-		Packaged/glm/detail/func_integer.inl \
-		Packaged/glm/detail/func_integer_simd.inl \
-		Packaged/glm/simd/integer.h \
-		Packaged/glm/gtc/matrix_transform.hpp \
-		Packaged/glm/ext/matrix_projection.hpp \
-		Packaged/glm/gtc/constants.hpp \
-		Packaged/glm/ext/scalar_constants.hpp \
-		Packaged/glm/ext/scalar_constants.inl \
-		Packaged/glm/gtc/constants.inl \
-		Packaged/glm/ext/matrix_projection.inl \
-		Packaged/glm/ext/matrix_clip_space.hpp \
-		Packaged/glm/ext/matrix_clip_space.inl \
-		Packaged/glm/ext/matrix_transform.hpp \
-		Packaged/glm/gtc/matrix_transform.inl \
-		Packaged/glm/gtc/type_ptr.hpp \
-		Packaged/glm/gtc/quaternion.hpp \
-		Packaged/glm/ext/vector_relational.hpp \
-		Packaged/glm/ext/vector_relational.inl \
-		Packaged/glm/detail/type_float.hpp \
-		Packaged/glm/ext/quaternion_common.hpp \
-		Packaged/glm/ext/quaternion_geometric.hpp \
-		Packaged/glm/ext/quaternion_geometric.inl \
-		Packaged/glm/ext/quaternion_common.inl \
-		Packaged/glm/ext/quaternion_common_simd.inl \
-		Packaged/glm/ext/quaternion_float.hpp \
-		Packaged/glm/detail/type_quat.hpp \
-		Packaged/glm/ext/quaternion_relational.hpp \
-		Packaged/glm/ext/quaternion_relational.inl \
-		Packaged/glm/detail/type_quat.inl \
-		Packaged/glm/detail/type_quat_simd.inl \
-		Packaged/glm/ext/quaternion_float_precision.hpp \
-		Packaged/glm/ext/quaternion_double.hpp \
-		Packaged/glm/ext/quaternion_double_precision.hpp \
-		Packaged/glm/ext/quaternion_trigonometric.hpp \
-		Packaged/glm/ext/quaternion_trigonometric.inl \
-		Packaged/glm/ext/quaternion_transform.hpp \
-		Packaged/glm/ext/quaternion_transform.inl \
-		Packaged/glm/gtc/quaternion.inl \
-		Packaged/glm/gtc/epsilon.hpp \
-		Packaged/glm/gtc/epsilon.inl \
-		Packaged/glm/gtc/quaternion_simd.inl \
-		Packaged/glm/gtc/vec1.hpp \
-		Packaged/glm/ext/vector_bool1.hpp \
-		Packaged/glm/ext/vector_bool1_precision.hpp \
-		Packaged/glm/ext/vector_float1.hpp \
-		Packaged/glm/ext/vector_float1_precision.hpp \
-		Packaged/glm/ext/vector_double1.hpp \
-		Packaged/glm/ext/vector_double1_precision.hpp \
-		Packaged/glm/ext/vector_int1.hpp \
-		Packaged/glm/ext/vector_int1_sized.hpp \
-		Packaged/glm/ext/vector_uint1.hpp \
-		Packaged/glm/ext/vector_uint1_sized.hpp \
-		Packaged/glm/gtc/type_ptr.inl \
-		Dependency/vao.h \
-		Dependency/include.h \
-		Dependency/vbo.h \
-		Dependency/bufferbase.hpp \
-		Dependency/ebo.h \
-		Dependency/random.h \
-		Dependency/program.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qdir.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qfileinfo.h \
-		Dependency/ubo.h \
-		Dependency/ssbo.h \
-		Dependency/texture2d.h \
-		Dependency/camera.h \
-		Dependency/model.h \
-		Packaged/tinyObj/tiny_obj_loader.h \
-		Dependency/threadpool.h \
-		Dependency/perlinnoise.h \
-		Dependency/texture2dgeneral.h \
-		Dependency/FSM.hpp \
-		Dependency/aabb.h \
-		Game/other.h \
-		Dependency/timer.h \
-		Dependency/textur1d.h \
-		Dependency/particlesystem.h \
-		Dependency/deferredrendering.h \
-		Dependency/fbo.h \
-		Dependency/rbo.h \
-		itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
-		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
-		Game/workspaceboard.h \
-		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
-		bag.h \
-		ui_bag.h \
-		Game/controller.h \
-		Game/role.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdialog.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qinputdialog.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
-		Game/generateterrain.h \
-		Game/block.h \
-		Game/chunk.h \
-		Game/section.h \
-		Game/face.h \
-		Game/generatebiomemap.h \
-		Game/generateblock.h \
-		Game/biomebase.h \
-		Game/grassland.h \
-		Game/desert.h \
-		Game/BiomeBase.h \
-		Game/plainland.h \
-		Game/snowfield.h \
-		Game/rainforest.h \
-		Game/forest.h \
-		Game/ocean.h \
-		Game/generateface.h \
-		Game/frustumcull.h \
-		Game/generatedecoration.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qstringlistmodel.h \
-		Game/rolecontroller.h \
-		Game/rolemove.h \
-		Game/rolecontrollerglobalsource.h \
-		Game/rolestop.h \
-		Game/roledrop.h \
-		Game/rolejump.h \
-		Game/roledestroyblock.h \
-		Game/roleFunctionBlock.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qmessagebox.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QMouseEvent
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
 release/palette.o: palette.cpp palette.h \
@@ -2993,7 +2505,7 @@ release/palette.o: palette.cpp palette.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -3001,57 +2513,25 @@ release/palette.o: palette.cpp palette.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/controller.h \
 		Game/role.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qinputdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -3782,7 +3262,7 @@ release/Game.o: Game/Game.cpp Game/Game.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -3790,57 +3270,25 @@ release/Game.o: Game/Game.cpp Game/Game.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/controller.h \
 		Game/role.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qinputdialog.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -4244,7 +3692,7 @@ release/globalsource.o: Game/globalsource.cpp Game/globalsource.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -4252,52 +3700,18 @@ release/globalsource.o: Game/globalsource.cpp Game/globalsource.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
-		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h
+		ui_bag.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\globalsource.o Game\globalsource.cpp
 
 release/include.o: Dependency/include.cpp Dependency/include.h \
@@ -8943,7 +8357,7 @@ release/controller.o: Game/controller.cpp Game/controller.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -8951,52 +8365,18 @@ release/controller.o: Game/controller.cpp Game/controller.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/role.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\controller.o Game\controller.cpp
 
@@ -9373,7 +8753,7 @@ release/role.o: Game/role.cpp Game/role.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -9381,52 +8761,18 @@ release/role.o: Game/role.cpp Game/role.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
-		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h
+		ui_bag.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\role.o Game\role.cpp
 
 release/model.o: Dependency/model.cpp Dependency/model.h \
@@ -10134,7 +9480,7 @@ release/chunk.o: Game/chunk.cpp Game/chunk.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -10142,52 +9488,18 @@ release/chunk.o: Game/chunk.cpp Game/chunk.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h \
 		Game/section.h \
 		Game/face.h \
@@ -10571,7 +9883,7 @@ release/section.o: Game/section.cpp Game/section.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -10579,52 +9891,18 @@ release/section.o: Game/section.cpp Game/section.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/face.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\section.o Game\section.cpp
 
@@ -11001,7 +10279,7 @@ release/face.o: Game/face.cpp Game/face.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -11009,52 +10287,18 @@ release/face.o: Game/face.cpp Game/face.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
-		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h
+		ui_bag.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\face.o Game\face.cpp
 
 release/block.o: Game/block.cpp Game/block.h \
@@ -11430,7 +10674,7 @@ release/block.o: Game/block.cpp Game/block.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -11438,52 +10682,18 @@ release/block.o: Game/block.cpp Game/block.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
-		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h
+		ui_bag.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\block.o Game\block.cpp
 
 release/generateterrain.o: Game/generateterrain.cpp Game/generateterrain.h \
@@ -11860,7 +11070,7 @@ release/generateterrain.o: Game/generateterrain.cpp Game/generateterrain.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -11868,52 +11078,18 @@ release/generateterrain.o: Game/generateterrain.cpp Game/generateterrain.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/chunk.h \
 		Game/section.h \
 		Game/face.h \
@@ -12296,7 +11472,7 @@ release/generateblock.o: Game/generateblock.cpp Game/generateblock.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -12304,52 +11480,18 @@ release/generateblock.o: Game/generateblock.cpp Game/generateblock.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/chunk.h \
 		Game/section.h \
 		Game/face.h \
@@ -12739,7 +11881,7 @@ release/generatebiomemap.o: Game/generatebiomemap.cpp Game/generatebiomemap.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -12747,52 +11889,18 @@ release/generatebiomemap.o: Game/generatebiomemap.cpp Game/generatebiomemap.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/chunk.h \
 		Game/block.h \
 		Game/section.h \
@@ -13175,7 +12283,7 @@ release/generateface.o: Game/generateface.cpp Game/generateface.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -13183,52 +12291,18 @@ release/generateface.o: Game/generateface.cpp Game/generateface.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h \
 		Game/section.h \
 		Game/face.h \
@@ -13609,7 +12683,7 @@ release/generatedecoration.o: Game/generatedecoration.cpp Game/generatedecoratio
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -13617,52 +12691,18 @@ release/generatedecoration.o: Game/generatedecoration.cpp Game/generatedecoratio
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/chunk.h \
 		Game/block.h \
 		Game/section.h \
@@ -14382,7 +13422,7 @@ release/frustumcull.o: Game/frustumcull.cpp Game/frustumcull.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -14390,52 +13430,18 @@ release/frustumcull.o: Game/frustumcull.cpp Game/frustumcull.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/face.h \
 		Game/chunk.h \
 		Game/block.h \
@@ -15143,7 +14149,7 @@ release/biomebase.o: Game/biomebase.cpp Game/biomebase.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -15151,52 +14157,18 @@ release/biomebase.o: Game/biomebase.cpp Game/biomebase.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\biomebase.o Game\biomebase.cpp
 
@@ -15574,7 +14546,7 @@ release/desert.o: Game/desert.cpp Game/desert.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -15582,52 +14554,18 @@ release/desert.o: Game/desert.cpp Game/desert.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\desert.o Game\desert.cpp
 
@@ -16005,7 +14943,7 @@ release/forest.o: Game/forest.cpp Game/forest.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -16013,52 +14951,18 @@ release/forest.o: Game/forest.cpp Game/forest.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\forest.o Game\forest.cpp
 
@@ -16436,7 +15340,7 @@ release/grassland.o: Game/grassland.cpp Game/grassland.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -16444,52 +15348,18 @@ release/grassland.o: Game/grassland.cpp Game/grassland.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\grassland.o Game\grassland.cpp
 
@@ -16867,7 +15737,7 @@ release/ocean.o: Game/ocean.cpp Game/ocean.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -16875,52 +15745,18 @@ release/ocean.o: Game/ocean.cpp Game/ocean.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ocean.o Game\ocean.cpp
 
@@ -17298,7 +16134,7 @@ release/plainland.o: Game/plainland.cpp Game/plainland.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -17306,52 +16142,18 @@ release/plainland.o: Game/plainland.cpp Game/plainland.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\plainland.o Game\plainland.cpp
 
@@ -17729,7 +16531,7 @@ release/rainforest.o: Game/rainforest.cpp Game/rainforest.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -17737,52 +16539,18 @@ release/rainforest.o: Game/rainforest.cpp Game/rainforest.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\rainforest.o Game\rainforest.cpp
 
@@ -18160,7 +16928,7 @@ release/snowfield.o: Game/snowfield.cpp Game/snowfield.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -18168,52 +16936,18 @@ release/snowfield.o: Game/snowfield.cpp Game/snowfield.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\snowfield.o Game\snowfield.cpp
 
@@ -18590,7 +17324,7 @@ release/rolecontroller.o: Game/rolecontroller.cpp Game/rolecontroller.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -18598,52 +17332,18 @@ release/rolecontroller.o: Game/rolecontroller.cpp Game/rolecontroller.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -19037,7 +17737,7 @@ release/rolecontrollerglobalsource.o: Game/rolecontrollerglobalsource.cpp Game/r
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -19045,52 +17745,18 @@ release/rolecontrollerglobalsource.o: Game/rolecontrollerglobalsource.cpp Game/r
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -19476,7 +18142,7 @@ release/roledestroyblock.o: Game/roledestroyblock.cpp Game/roledestroyblock.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -19484,52 +18150,18 @@ release/roledestroyblock.o: Game/roledestroyblock.cpp Game/roledestroyblock.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -19915,7 +18547,7 @@ release/roledrop.o: Game/roledrop.cpp Game/roledrop.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -19923,52 +18555,18 @@ release/roledrop.o: Game/roledrop.cpp Game/roledrop.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -20354,7 +18952,7 @@ release/rolefunctionblock.o: Game/rolefunctionblock.cpp Game/rolefunctionblock.h
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -20362,52 +18960,18 @@ release/rolefunctionblock.o: Game/rolefunctionblock.cpp Game/rolefunctionblock.h
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -20795,7 +19359,7 @@ release/rolejump.o: Game/rolejump.cpp Game/rolejump.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -20803,52 +19367,18 @@ release/rolejump.o: Game/rolejump.cpp Game/rolejump.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -21234,7 +19764,7 @@ release/rolemove.o: Game/rolemove.cpp Game/rolemove.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -21242,52 +19772,18 @@ release/rolemove.o: Game/rolemove.cpp Game/rolemove.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -21673,7 +20169,7 @@ release/rolestop.o: Game/rolestop.cpp Game/rolestop.h \
 		itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QFrame \
 		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
+		bagbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -21681,52 +20177,18 @@ release/rolestop.o: Game/rolestop.cpp Game/rolestop.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		bagbutton.h \
 		Game/workspaceboard.h \
 		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
 		bag.h \
 		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		Game/generateterrain.h \
 		Game/block.h \
 		Game/chunk.h \
@@ -23495,33 +21957,7 @@ release/itemboard.o: itemboard.cpp itemboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_itemboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h
+		ui_itemboard.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\itemboard.o itemboard.cpp
 
 release/workspaceboard.o: workspaceboard.cpp Game/workspaceboard.h \
@@ -23626,66 +22062,7 @@ release/workspaceboard.o: workspaceboard.cpp Game/workspaceboard.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_workspaceboard.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGraphicsView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpainter.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qpen.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QGridLayout \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyleoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvalidator.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qregularexpression.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyle.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabbar.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QLabel \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QRadioButton \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qradiobutton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QSpacerItem \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextdocument.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtextformat.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QVBoxLayout \
-		BagButton.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QIcon \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/QPainter
+		ui_workspaceboard.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\workspaceboard.o workspaceboard.cpp
 
 release/bag.o: bag.cpp bag.h \
@@ -23790,41 +22167,7 @@ release/bag.o: bag.cpp bag.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_bag.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/QVariant \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QAction \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qaction.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qicon.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qactiongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QApplication \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qcoreapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qeventloop.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qguiapplication.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QHeaderView \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyleoption.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui/qvalidator.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore/qregularexpression.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qabstractslider.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qstyle.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabbar.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtabwidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/QTableWidget \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtablewidget.h \
-		../../../Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets/qtableview.h
+		ui_bag.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\bag.o bag.cpp
 
 release/bagbutton.o: bagbutton.cpp bagbutton.h \

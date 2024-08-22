@@ -255,20 +255,8 @@ void GenerateTheWorld(uint seed)
     PeaksNoise=PerlinNoiseGenerator(int(pow(seed+520,2)));
     HumidityNoise=PerlinNoiseGenerator(int(pow(seed+8888,2)));
     TemperatureNoise=PerlinNoiseGenerator(int(pow(seed+4444,2)));
-    /////////////生成世界
-    auto check=[&]()->bool{
-           static const int RenderHalf=WorldChunkWidth/2;
-           static const int LoadHalf=(WorldChunkWidth+2)/2;
-           for(int x=-RenderHalf;x<=RenderHalf;++x)
-            for(int z=-RenderHalf;z<=RenderHalf;++z){
-                Chunk*chunk=WorldChunk[x+LoadHalf][z+LoadHalf];
-                if(chunk->GenerateFaceState!=5)return 1;
-            }
-            return 0;
-    };
-    do{
-        UpdateWorldChunks();
-    }while(check());
+    /////////////强制生成世界
+    UpdateWorldChunksForce();
 }
 
 void ClearTheWorld()
@@ -1397,4 +1385,47 @@ void InitMyBag()
             });
         }
     }
+}
+
+void UpdateWorldChunksForce()
+{
+    qDebug()<<"加载需要一点点时间，请老师安心等待......";
+    static const int LoadSize=WorldChunkWidth+2;
+    static const int LoadHalf=LoadSize/2;
+    static const int RenderHalf=WorldChunkWidth/2;
+    /////////////////更新区块并且加载到WorldChunk里面
+    for(int x=-LoadHalf;x<=LoadHalf;++x)
+    {
+        for(int z=-LoadHalf;z<=LoadHalf;++z)
+        {
+            vec2 tarChunkPos=CameraChunkPos+vec2{x*SectionBlockWidth,z*SectionBlockWidth};
+            auto*chunk=WorldChunkMap[tarChunkPos];
+            if(!chunk)
+            {
+                chunk=GetOneChunk();
+                chunk->Init(tarChunkPos);
+                WorldChunkMap[tarChunkPos]=chunk;
+                GenerateTerrain(chunk);
+                GenerateBlock(chunk);
+                chunk->completeLoadBlock=1;
+            }
+            WorldChunk[x+LoadHalf][z+LoadHalf]=chunk;
+        }
+    }
+    ///////////////加载需要渲染区域的装饰和面
+    for(int x=-RenderHalf;x<=RenderHalf;++x)
+    {
+        for(int z=-RenderHalf;z<=RenderHalf;++z)
+        {
+            auto*chunk=WorldChunk[x+LoadHalf][z+LoadHalf];
+            auto cnc=GetChunkNearChunks(chunk);
+            GenerateDecoration(chunk);
+            for(auto*section:chunk->section)
+                GenerateFace(section,cnc);
+            for(auto*section:chunk->section)
+                SectionNeedLoadFace.push_front(section);
+            chunk->GenerateFaceState=5;//3表示已经把section放入面加载队列
+        }
+    }
+
 }

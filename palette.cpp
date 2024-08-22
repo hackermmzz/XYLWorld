@@ -95,7 +95,6 @@ void Palette::keyPressEvent(QKeyEvent *event)
     auto key=event->key();
     auto&camera=((Controller*)controller)->camera;
     if(key==Qt::Key_W){
-        controller->camera.processKeyBoard(FORWARD,1.0);;
         RoleMoveDirection|=FORWARD;
         rolecontroller.mvfsm.SwitchState(MOVE);
     }
